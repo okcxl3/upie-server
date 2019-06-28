@@ -65,7 +65,7 @@ const PORT = {
 
 const MONGODB_CONFIG = {
   [DEV] : {
-      host: "localhost",
+      host: "209.97.158.119",
       port: 27017,
       database: "upie",
       password: "password",
