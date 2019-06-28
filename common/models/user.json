@@ -1,0 +1,60 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "restrictResetPasswordTokenScope": true,
+  "emailVerificationRequired": true,
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "avatar-url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "created-at": {
+      "type": "date",
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "last-loggedin-at": {
+      "type": "date",
+      "dataType": "timestamp"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "contacts": {
+      "type": "hasMany",
+      "model": "Contact",
+      "foreignKey": "user-id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "uploadAvatar"
+    }
+  ],
+  "methods": {},
+  "mixins": {
+    "Pagination": {}
+  }
+}

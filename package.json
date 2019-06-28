@@ -1,0 +1,32 @@
+{
+  "name": "upie-server",
+  "version": "0.0.0",
+  "description": "LoopBack Upie Server",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "start": "node .",
+    "test": "tape tests/**/*.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.10.0",
+    "compression": "^1.0.3",
+    "cors": "^2.8.1",
+    "loopback": "^3.0.0",
+    "loopback-boot": "^2.4.0",
+    "loopback-component-explorer": "^6.3.1",
+    "loopback-component-storage": "^3.6.1",
+    "loopback-connector-mongodb": "^4.2.0",
+    "node-fetch": "^2.6.0",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^3.2.0"
+  },
+  "devDependencies": {
+    "tape": "^4.2.0"
+  },
+  "repository": {},
+  "license": "MIT",
+  "author": "Upie Tech. Ltd."
+}
